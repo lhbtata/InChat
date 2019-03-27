@@ -17,6 +17,8 @@ import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,7 +31,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @Data
 public class NettyBootstrapServer extends AbstractBootstrapServer {
-
+    private final Logger log = LoggerFactory.getLogger(NettyBootstrapServer.class);
     private InitNetty serverBean;
 
     public InitNetty getServerBean() {
